@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nrq-xn-YjK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8rj-bO-vs4">
+                                <rect key="frame" x="239" y="30" width="122" height="29"/>
+                                <segments>
+                                    <segment title="標準"/>
+                                    <segment title="衛星"/>
+                                    <segment title="混合"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="5qM-3y-LUN"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ny4-hO-Iyt">
+                                <rect key="frame" x="180" y="88" width="239" height="29"/>
+                                <segments>
+                                    <segment title="無"/>
+                                    <segment title="追蹤"/>
+                                    <segment title="追蹤＆方向"/>
+                                </segments>
+                                <connections>
+                                    <action selector="userTrackingChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="xoa-Yp-Hi1"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nrq-xn-YjK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0cf-Qa-Mlf"/>
+                            <constraint firstItem="Ny4-hO-Iyt" firstAttribute="top" secondItem="8rj-bO-vs4" secondAttribute="bottom" constant="30" id="2Xj-tO-nHt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nrq-xn-YjK" secondAttribute="bottom" id="970-bh-5aJ"/>
+                            <constraint firstItem="8rj-bO-vs4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="GOz-Am-Txv"/>
+                            <constraint firstAttribute="trailing" secondItem="Nrq-xn-YjK" secondAttribute="trailing" id="Hlc-GF-gKg"/>
+                            <constraint firstItem="Nrq-xn-YjK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HwG-X4-UJj"/>
+                            <constraint firstItem="Nrq-xn-YjK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Pwn-if-Oz0"/>
+                            <constraint firstItem="8rj-bO-vs4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ncK-VE-QFx"/>
+                            <constraint firstItem="Ny4-hO-Iyt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u7c-QP-Z4l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainMapView" destination="Nrq-xn-YjK" id="wE0-oC-Hdd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="389"/>
+        </scene>
+    </scenes>
+</document>
